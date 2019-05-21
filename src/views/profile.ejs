@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Authenticated content</title>
+    <% include partials/bootstrap-links.js %> 
+</head>
+<body>
+        <div class="container">
+                <hr>
+                <h3>Welcome to the dashboard for registered users.</h3>
+                <hr>
+                <div class="col-md-8 mx-auto">
+                    <div class="card mt-5">
+                        <div class="card-body">
+                                <div class="text-center"><h1> User data </h1></div>
+                                <form action="/login" method="post">
+                                    <div class="form-group">
+                                            <label for="password">Id: <%= user._id %></label>
+                                        </div>
+                                    <div class="form-group">
+                                        <label for="email" class="">Email: <%= user.local.email %></label>
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password: <%= user.local.password %></label>
+                                    </div>
+    
+                                </form>
+                        </div>
+                        <div class="card-footer">
+                                <div class="text-right"><a href="/logout" class="btn btn-info">Logout</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>
